@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
-  styleUrls: ['./inicio.page.scss'],
+  styleUrls: ['./inicio.page.scss']
 })
 export class InicioPage implements OnInit {
-
   componentes: Componente[] = [
     {
       icon: 'american-football',
@@ -47,14 +47,46 @@ export class InicioPage implements OnInit {
       icon: 'car',
       name: 'Fabs',
       redirectTo: '/fab'
+    },
+    {
+      icon: 'grid',
+      name: 'Grid - Rows',
+      redirectTo: '/grid'
+    },
+    {
+      icon: 'infinite',
+      name: 'Infinite Scroll',
+      redirectTo: '/infinite-scroll'
+    },
+    {
+      icon: 'hammer',
+      name: 'Input - Forms',
+      redirectTo: '/input'
+    },
+    {
+      icon: 'list',
+      name: 'Listas - Sliding',
+      redirectTo: '/list'
+    },
+    {
+      icon: 'reorder-four-outline',
+      name: 'Listas - Reorder',
+      redirectTo: '/list-reorder'
+    },
+    {
+      icon: 'refresh-circle',
+      name: 'Loading',
+      redirectTo: '/loading'
     }
   ];
 
-  constructor() { }
+  constructor(private menuCtrl: MenuController) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  toggleMenu() {
+    this.menuCtrl.toggle();
   }
-
 }
 
 interface Componente {
